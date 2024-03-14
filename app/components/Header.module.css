@@ -1,0 +1,16 @@
+.container{
+    text-align: center;
+    margin-top: 1em;
+}
+.logo{
+    width:450px;
+    height:auto;
+    margin: 1em 0;
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+    .logo{
+        width:350px;
+    }
+  }
