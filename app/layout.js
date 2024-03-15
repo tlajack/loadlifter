@@ -1,5 +1,8 @@
 import "./globals.css";
-import Footer from "./components/footer";
+import { AppRouterCacheProvider } from '@mui/material-nextjs/v13-appRouter';
+import { ThemeProvider } from '@mui/material/styles'
+import theme from "./theme/theme"
+import Footer from "./components/Footer";
 import Header from "./components/Header";
 
 export const metadata = {
@@ -16,15 +19,21 @@ export const metadata = {
   },
 };
 
+
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-        <div className="pageContainer">
-          <Header />
-          {children}
-          <Footer />
-        </div>
+        <AppRouterCacheProvider>
+          <ThemeProvider theme={theme}>
+          <div className="pageContainer">
+            <Header />
+            {children}
+            <Footer />
+          </div>
+          </ThemeProvider>
+        </AppRouterCacheProvider>
       </body>
     </html>
   );
